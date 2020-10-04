@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AutoCADLtAutoMation</RootNamespace>
     <AssemblyName>AutoCADLtAutoMation</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <RunPostBuildEvent>Always</RunPostBuildEvent>
@@ -50,7 +52,8 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="TD_Mgd">
-      <HintPath>..\Teigha_Net_3_09_10(x64)Libs\TD_Mgd.dll</HintPath>
+      <HintPath>..\Teigha_Net_3_09_10(x64)\TD_Mgd.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -82,7 +85,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAccoreConsole.resx">
-    <DependentUpon>frmAccoreConsole.cs</DependentUpon>
+      <DependentUpon>frmAccoreConsole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PanelInformationSetup.resx">
       <DependentUpon>PanelInformationSetup.cs</DependentUpon>
@@ -115,10 +118,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>xcopy /y $(SolutionDir)Teigha_Net_3_09_10(x64)Libs $(ProjectDir)bin /e /s</PreBuildEvent>
+    <PreBuildEvent>xcopy /y $(SolutionDir)Teigha_Net_3_09_10(x64) $(ProjectDir)bin /e /s</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>xcopy /y $(ProjectDir)bin "\\10.19.80.15\sm3d\KFWH Development\KFWH_CP_Development\ODAApp" /e /s
+    <PostBuildEvent>rem xcopy /y $(ProjectDir)bin "\\10.19.80.15\sm3d\KFWH Development\KFWH_CP_Development\ODAApp" /e /s
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
